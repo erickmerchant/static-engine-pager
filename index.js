@@ -1,10 +1,8 @@
-var _ = require('lodash');
-
 module.exports = function () {
 
     return function (pages, next) {
 
-        _.each(pages, function (val, key) {
+        pages.forEach(function (val, key) {
 
             if (key - 1 > -1) {
 
