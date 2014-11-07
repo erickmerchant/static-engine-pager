@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": "erickmerchant/static-engine-pager",
   "keywords": [
-      "static-engine"
+    "static-engine"
   ],
   "author": "Erick Merchant <erickmerchant@gmail.com>",
   "license": "MIT",
@@ -13,9 +13,12 @@
     "url": "https://github.com/erickmerchant/static-engine-pager/issues"
   },
   "homepage": "https://github.com/erickmerchant/static-engine-pager",
-  "dependencies": {
-  },
+  "dependencies": {},
   "peerDependencies": {
     "static-engine": "^2.0.0"
+  },
+  "devDependencies": {
+    "chai": "^1.9.2",
+    "mocha": "^2.0.1"
   }
 }
