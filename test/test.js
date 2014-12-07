@@ -1,13 +1,11 @@
 var assert = require('chai').assert;
-var first = require('../index.js');
+var pager = require('../index.js');
 
 describe('plugin', function(){
 
-    var plugin = first();
-
     it('it should work with zero pages', function(done){
 
-        plugin([], function(pages, next){
+        pager([]).then(function(pages){
 
             assert.deepEqual(pages, []);
 
@@ -17,7 +15,7 @@ describe('plugin', function(){
 
     it('it should work with one page', function(done){
 
-        plugin([{title: 'one'}], function(pages, next){
+        pager([{title: 'one'}]).then(function(pages){
 
             assert.deepEqual(pages, [{title: 'one'}]);
 
@@ -27,7 +25,7 @@ describe('plugin', function(){
 
     it('it should work with two pages', function(done){
 
-        plugin([{title: 'one'}, {title: 'two'}], function(pages, next){
+        pager([{title: 'one'}, {title: 'two'}]).then(function(pages){
 
             assert.deepEqual(pages[0].previous, pages[1]);
             assert.deepEqual(pages[1].next, pages[0]);
@@ -38,7 +36,7 @@ describe('plugin', function(){
 
     it('it should work with more pages', function(done){
 
-        plugin([{title: 'one'}, {title: 'two'}, {title: 'three'}], function(pages, next){
+        pager([{title: 'one'}, {title: 'two'}, {title: 'three'}]).then(function(pages){
 
             assert.deepEqual(pages[0].previous, pages[1]);
             assert.deepEqual(pages[1].previous, pages[2]);
