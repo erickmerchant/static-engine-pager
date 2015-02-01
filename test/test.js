@@ -5,7 +5,7 @@ describe('plugin', function(){
 
     it('it should work with zero pages', function(done){
 
-        pager([]).then(function(pages){
+        pager([], function(err, pages){
 
             assert.deepEqual(pages, []);
 
@@ -15,7 +15,7 @@ describe('plugin', function(){
 
     it('it should work with one page', function(done){
 
-        pager([{title: 'one'}]).then(function(pages){
+        pager([{title: 'one'}], function(err, pages){
 
             assert.deepEqual(pages, [{title: 'one'}]);
 
@@ -25,7 +25,7 @@ describe('plugin', function(){
 
     it('it should work with two pages', function(done){
 
-        pager([{title: 'one'}, {title: 'two'}]).then(function(pages){
+        pager([{title: 'one'}, {title: 'two'}], function(err, pages){
 
             assert.deepEqual(pages[0].previous, pages[1]);
             assert.deepEqual(pages[1].next, pages[0]);
@@ -36,7 +36,7 @@ describe('plugin', function(){
 
     it('it should work with more pages', function(done){
 
-        pager([{title: 'one'}, {title: 'two'}, {title: 'three'}]).then(function(pages){
+        pager([{title: 'one'}, {title: 'two'}, {title: 'three'}], function(err, pages){
 
             assert.deepEqual(pages[0].previous, pages[1]);
             assert.deepEqual(pages[1].previous, pages[2]);

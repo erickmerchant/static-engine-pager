@@ -13,9 +13,7 @@
     "url": "https://github.com/erickmerchant/static-engine-pager/issues"
   },
   "homepage": "https://github.com/erickmerchant/static-engine-pager",
-  "dependencies": {
-    "es6-promise": "^2.0.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "chai": "^1.9.2",
     "mocha": "^2.0.1"

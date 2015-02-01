@@ -1,6 +1,4 @@
-var Promise = require('es6-promise').Promise;
-
-module.exports = function (pages) {
+module.exports = function (pages, done) {
 
     pages.forEach(function (val, key) {
 
@@ -15,5 +13,5 @@ module.exports = function (pages) {
         }
     });
 
-    return Promise.resolve(pages);
+    done(null, pages);
 };
