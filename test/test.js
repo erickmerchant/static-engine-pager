@@ -1,4 +1,4 @@
-var assert = require('chai').assert;
+var assert = require('assert');
 var pager = require('../index.js');
 
 describe('plugin', function(){

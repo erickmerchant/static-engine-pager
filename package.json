@@ -15,7 +15,6 @@
   "homepage": "https://github.com/erickmerchant/static-engine-pager",
   "dependencies": {},
   "devDependencies": {
-    "chai": "^2.0.0",
     "mocha": "^2.0.1"
   }
 }
