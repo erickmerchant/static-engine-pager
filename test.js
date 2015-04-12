@@ -1,7 +1,7 @@
 var assert = require('assert')
 var describe = require('mocha').describe
 var it = require('mocha').it
-var pager = require('../index.js')
+var pager = require('./index.js')
 
 describe('plugin', function () {
   it('it should work with zero pages', function (done) {
