@@ -5,14 +5,12 @@
 This is a plugin for [static-engine](https://github.com/erickmerchant/static-engine). It adds next and previous properties to each object of the collection that.
 
 ```javascript
-
-var engine = require('static-engine');
-var pager = require('static-engine-pager');
-var pluginA = require('plugin-a');
+var engine = require('static-engine')
+var pager = require('static-engine-pager')
+var pluginA = require('plugin-a')
 
 engine([
-    pluginA,
-    pager
-]);
-
+  pluginA,
+  pager
+])
 ```
