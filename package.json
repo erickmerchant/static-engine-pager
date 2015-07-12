@@ -1,6 +1,6 @@
 {
   "name": "static-engine-pager",
-  "version": "3.5.0",
+  "version": "3.5.1",
   "description": "Plugin for static-engine. Add next and previous properties to each object of the collection.",
   "main": "index.js",
   "repository": "erickmerchant/static-engine-pager",
