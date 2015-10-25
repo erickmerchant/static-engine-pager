@@ -1,46 +1,42 @@
-var assert = require('assert')
-var describe = require('mocha').describe
-var it = require('mocha').it
+var tap = require('tap')
 var pager = require('./index.js')
 
-describe('plugin', function () {
-  it('it should work with zero pages', function (done) {
-    pager([], function (err, pages) {
-      assert.equal(null, err)
-      assert.deepEqual(pages, [])
+tap.test('it should work with zero pages', function (t) {
+  pager([], function (err, pages) {
+    t.equal(null, err)
+    t.deepEqual(pages, [])
 
-      done()
-    })
+    t.end()
   })
+})
 
-  it('it should work with one page', function (done) {
-    pager([{title: 'one'}], function (err, pages) {
-      assert.equal(null, err)
-      assert.deepEqual(pages, [{title: 'one'}])
+tap.test('it should work with one page', function (t) {
+  pager([{title: 'one'}], function (err, pages) {
+    t.equal(null, err)
+    t.deepEqual(pages, [{title: 'one'}])
 
-      done()
-    })
+    t.end()
   })
+})
 
-  it('it should work with two pages', function (done) {
-    pager([{title: 'one'}, {title: 'two'}], function (err, pages) {
-      assert.equal(null, err)
-      assert.deepEqual(pages[0].previous, pages[1])
-      assert.deepEqual(pages[1].next, pages[0])
+tap.test('it should work with two pages', function (t) {
+  pager([{title: 'one'}, {title: 'two'}], function (err, pages) {
+    t.equal(null, err)
+    t.deepEqual(pages[0].previous, pages[1])
+    t.deepEqual(pages[1].next, pages[0])
 
-      done()
-    })
+    t.end()
   })
+})
 
-  it('it should work with more pages', function (done) {
-    pager([{title: 'one'}, {title: 'two'}, {title: 'three'}], function (err, pages) {
-      assert.equal(null, err)
-      assert.deepEqual(pages[0].previous, pages[1])
-      assert.deepEqual(pages[1].previous, pages[2])
-      assert.deepEqual(pages[1].next, pages[0])
-      assert.deepEqual(pages[2].next, pages[1])
+tap.test('it should work with more pages', function (t) {
+  pager([{title: 'one'}, {title: 'two'}, {title: 'three'}], function (err, pages) {
+    t.equal(null, err)
+    t.deepEqual(pages[0].previous, pages[1])
+    t.deepEqual(pages[1].previous, pages[2])
+    t.deepEqual(pages[1].next, pages[0])
+    t.deepEqual(pages[2].next, pages[1])
 
-      done()
-    })
+    t.end()
   })
 })
