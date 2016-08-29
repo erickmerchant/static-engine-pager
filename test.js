@@ -1,7 +1,7 @@
-var tap = require('tap')
+var test = require('tape')
 var pager = require('./index.js')
 
-tap.test('it should work with zero pages', function (t) {
+test('it should work with zero pages', function (t) {
   pager([], function (err, pages) {
     t.equal(null, err)
     t.deepEqual(pages, [])
@@ -10,7 +10,7 @@ tap.test('it should work with zero pages', function (t) {
   })
 })
 
-tap.test('it should work with one page', function (t) {
+test('it should work with one page', function (t) {
   pager([{title: 'one'}], function (err, pages) {
     t.equal(null, err)
     t.deepEqual(pages, [{title: 'one'}])
@@ -19,7 +19,7 @@ tap.test('it should work with one page', function (t) {
   })
 })
 
-tap.test('it should work with two pages', function (t) {
+test('it should work with two pages', function (t) {
   pager([{title: 'one'}, {title: 'two'}], function (err, pages) {
     t.equal(null, err)
     t.deepEqual(pages[0].previous, pages[1])
@@ -29,7 +29,7 @@ tap.test('it should work with two pages', function (t) {
   })
 })
 
-tap.test('it should work with more pages', function (t) {
+test('it should work with more pages', function (t) {
   pager([{title: 'one'}, {title: 'two'}, {title: 'three'}], function (err, pages) {
     t.equal(null, err)
     t.deepEqual(pages[0].previous, pages[1])
